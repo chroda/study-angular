@@ -9,7 +9,7 @@ export class DataBindingComponent implements OnInit {
 
   url:string = 'http://loiane.com';
   cursoAngular = true;
-  urlImagem:string = 'http://lorempixel.com/400/200/nature';
+  urlImagem:string = 'http://laorempixel.com/400/200/nature';
 
   getValor(){
     return 1;
