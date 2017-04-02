@@ -1,5 +1,5 @@
 <section class="proprierty-binding">
-  
+
   <article>
     <h3>Interpolation / Interpolação</h3>
     <p>String renderizada com interpolação: {{ url }}</p>
@@ -7,7 +7,7 @@
     <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
     <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
   </article>
-  
+
   <article>
     <h3>Property Binding</h3>
     <img src="{{ urlImagem }}">
@@ -31,6 +31,7 @@
       <div class="alert" role="alert" [class.alert-info]    ="classe.value == 'alert-info'">Info</div>
       <div class="alert" role="alert" [class.alert-warning] ="classe.value == 'alert-warning'">Warning</div>
       <div class="alert" role="alert" [class.alert-danger]  ="classe.value == 'alert-danger'">Danger</div>
+      <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' ">Só aparece em Erro</div>
     </div>
   </article>
 
