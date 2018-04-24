@@ -42,7 +42,7 @@
   </article>
 </section>
 -->
-
+<!--
 <section class="event-binding">
   <article>
     <h3>Event Binding</h3>
@@ -69,11 +69,24 @@
   </article>
 </section> -->
 
-<section class="event-binding">
+<section class="two-way-binding">
   <article>
-    <h3>Event Binding</h3>
+    <h3>Two-way data binding</h3>
     <div>
-      <button class="btn btn-primary"></button>
+
+      <input type="text"
+        [value]="nome"
+        (input)="nome = $event.target.value"
+      />
+
+      <input type="text"
+        [value]="nome"
+        (ngModelChange)="nome = $event"
+      />
+
+      <p>Você digitou {{ this.nome }}</p>
+
+
     </div>
   </article>
 </section>
