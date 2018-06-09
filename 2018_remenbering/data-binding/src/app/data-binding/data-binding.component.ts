@@ -11,12 +11,13 @@ export class DataBindingComponent implements OnInit {
   cursoAngular = true;
   urlImagem = 'http://lorempixel.com/400/200/nature/';
 
-  valorAtual = '';
+  valorAtual:string = '';
   valorSalvo = '';
 
-  isMouseOver = false;
+  isMouseOver: boolean = false;
 
-  nome = 'abc';
+  nome: string = 'abc';
+
   pessoa = {
     nome: 'def',
     idade: 20
