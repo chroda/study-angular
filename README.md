@@ -1,4 +1,5 @@
-# study-angular2
-Research about Angular2
+# study-angular
 
-https://www.youtube.com/playlist?list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G
+### links of study:
+- https://www.youtube.com/playlist?list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G
+- https://www.linkedin.com/learning/angular-essential-training-2/components-bootstrap-and-the-dom
