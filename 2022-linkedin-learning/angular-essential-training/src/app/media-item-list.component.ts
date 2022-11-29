@@ -51,5 +51,5 @@ export class MediaItemListComponent {
     }
   ];
 
-  onMediaItemDelete(mediaItem) { }
+  onMediaItemDelete(mediaItem:any) { }
 }
