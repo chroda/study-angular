@@ -1,22 +1,26 @@
 <header>
   <h2>Add Media to Watch</h2>
 </header>
-<form>
+<form [formGroup]="form"
+  (ngSubmit)="onSubmit(form.value)">
   <ul>
     <li>
       <label for="medium">Medium</label>
-      <select name="medium" id="medium">
+      <select name="medium" id="medium" formControlName="medium">
         <option value="Movies">Movies</option>
         <option value="Series">Series</option>
       </select>
     </li>
     <li>
       <label for="name">Name</label>
-      <input type="text" name="name" id="name">
+      <input type="text" name="name" id="name" formControlName="name">
+      <div *ngIf="form.get('name').hasError('pattern')" class="error">
+        Name has invalid characters
+      </div>
     </li>
     <li>
       <label for="category">Category</label>
-      <select name="category" id="category">
+      <select name="category" id="category" formControlName="category">
         <option value="Action">Action</option>
         <option value="Science Fiction">Science Fiction</option>
         <option value="Comedy">Comedy</option>
@@ -27,8 +31,11 @@
     </li>
     <li>
       <label for="year">Year</label>
-      <input type="text" name="year" id="year" maxlength="4">
+      <input type="text" name="year" id="year" maxlength="4" formControlName="year">
+      <div *ngIf="form.get('year').errors as yearErrors" class="error">
+        Must be between {{ yearErrors }} and 2100
+      </div>
     </li>
   </ul>
-  <button type="submit">Save</button>
+  <button type="submit" [disabled]="!form.valid">Save</button>
 </form>
