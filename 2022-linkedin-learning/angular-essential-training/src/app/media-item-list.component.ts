@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MediaItemService } from './media-item.service';
+import { MediaItemService, MediaItem } from './media-item.service';
 
 @Component({
   selector: 'mw-media-item-list',
@@ -13,14 +13,14 @@ export class MediaItemListComponent implements OnInit {
   constructor(private mediaItemService: MediaItemService) {}
 
   ngOnInit() {
-    this.getMediaItems(this.medium)
+    this.getMediaItems(this.medium);
   }
-  
+
   onMediaItemDelete(mediaItem) {
     this.mediaItemService.delete(mediaItem);
   }
-  
-  getMediaItems(medium){
+
+  getMediaItems(medium: string) {
     this.medium = medium;
     this.mediaItemService.get()
       .subscribe(mediaItems => {
