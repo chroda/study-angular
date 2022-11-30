@@ -15,5 +15,7 @@ export class MediaItemListComponent implements OnInit {
     this.mediaItems = this.mediaItemService.get()
   }
 
-  onMediaItemDelete(mediaItem) { }
+  onMediaItemDelete(mediaItem) {
+    this.mediaItemService.delete(mediaItem)
+  }
 }
