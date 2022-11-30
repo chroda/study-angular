@@ -22,7 +22,7 @@ export class MediaItemListComponent implements OnInit {
 
   getMediaItems(medium: string) {
     this.medium = medium;
-    this.mediaItemService.get()
+    this.mediaItemService.get(medium)
       .subscribe(mediaItems => {
         this.mediaItems = mediaItems;
       });
