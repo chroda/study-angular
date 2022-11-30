@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder  } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { MediaItemService } from './media-item.service';
 import { lookupListToken } from './providers';
 
@@ -9,14 +9,13 @@ import { lookupListToken } from './providers';
   styleUrls: ['./media-item-form.component.css']
 })
 export class MediaItemFormComponent implements OnInit {
-  form: FormGroup; 
+  form: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private mediaItemService: MediaItemService,
-    @Inject(lookupListToken) public lookupLists
-  ) {}
-  
+    @Inject(lookupListToken) public lookupLists) {}
+
   ngOnInit() {
     this.form = this.formBuilder.group({
       medium: this.formBuilder.control('Movies'),
@@ -25,8 +24,8 @@ export class MediaItemFormComponent implements OnInit {
         Validators.pattern('[\\w\\-\\s\\/]+')
       ])),
       category: this.formBuilder.control(''),
-      year: this.formBuilder.control('', this.yearValidator),  
-    })
+      year: this.formBuilder.control('', this.yearValidator),
+    });
   }
 
   yearValidator(control: FormControl) {
@@ -34,8 +33,8 @@ export class MediaItemFormComponent implements OnInit {
       return null;
     }
     const year = parseInt(control.value, 10);
-    const minYear = 1800;
-    const maxYear = 2500;
+    const minYear = 1900;
+    const maxYear = 2100;
     if (year >= minYear && year <= maxYear) {
       return null;
     } else {
@@ -43,8 +42,8 @@ export class MediaItemFormComponent implements OnInit {
         year: {
           min: minYear,
           max: maxYear
-        } 
-      }
+        }
+      };
     }
   }
 

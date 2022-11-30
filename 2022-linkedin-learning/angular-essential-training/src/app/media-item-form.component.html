@@ -1,13 +1,14 @@
 <header>
   <h2>Add Media to Watch</h2>
 </header>
-<form [formGroup]="form"
+<form
+  [formGroup]="form"
   (ngSubmit)="onSubmit(form.value)">
   <ul>
     <li>
       <label for="medium">Medium</label>
       <select name="medium" id="medium" formControlName="medium">
-        <option *ngFor="let medium of lookupLists.mediums" [value]="medium">{{ medium }}</option>
+        <option *ngFor="let medium of lookupLists.mediums" value="{{medium}}">{{medium}}</option>
       </select>
     </li>
     <li>
@@ -32,7 +33,10 @@
       <label for="year">Year</label>
       <input type="text" name="year" id="year" maxlength="4" formControlName="year">
       <div *ngIf="form.get('year').errors as yearErrors" class="error">
-        Must be between {{ yearErrors }} and 2100
+        Must be between 
+        {{yearErrors.year.min}}
+        and 
+        {{yearErrors.year.max}}
       </div>
     </li>
   </ul>
